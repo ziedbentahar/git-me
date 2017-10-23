@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {SearchSuggestions} from './SearchSuggestions';
-import groupBy from '../../helpers/groupBy';
 import './Autocomplete.css';
 
 export default class Autcomplete extends Component {
@@ -24,15 +23,15 @@ export default class Autcomplete extends Component {
 
     searchByPrefix = (e) => {
         const value = e.target.value;
-        const result = this
+        const suggestions = this
             .props
             .searchByPrefixFn(value);
-           
-        let suggestions = new Map();
-        if (result) {
-            suggestions = groupBy(result, 'category');
-        } 
-        this.setState({suggestions: suggestions});
+      
+        if (suggestions) {
+            this.setState({suggestions: suggestions});
+        }  else {
+            this.setState({suggestions: new Map()});
+        }
 
     }
 
