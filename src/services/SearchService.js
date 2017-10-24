@@ -28,7 +28,8 @@ export default class SearchService {
         if(!this.index || !queryTerm) {
             return;
         }
-        const result = this.index.search(`${queryTerm}^100 ${queryTerm}*^10 ${queryTerm}~2`);
+
+        const result = this.index.search(`${queryTerm}^100 ${queryTerm}*^10`);
         
         if (result && result.length > 0) {
             return groupBy(result.map(item => this.documentsWithId[item.ref]), 'category');

@@ -23,14 +23,16 @@ export default class Autcomplete extends Component {
 
     searchByPrefix = (e) => {
         const value = e.target.value;
-        const suggestions = this
+
+        const suggestions = value.length > 2 ? this
             .props
-            .searchByPrefixFn(value);
+            .searchByPrefixFn(value) : 
+            null;
       
         if (suggestions) {
             this.setState({suggestions: suggestions});
         }  else {
-            this.setState({suggestions: new Map()});
+            this.setState({suggestions: null});
         }
 
     }
@@ -40,8 +42,9 @@ export default class Autcomplete extends Component {
             <div className="search">
                 <label>
                     <input type="text" required onKeyUp={this.searchByPrefix}/>
-                    <div className="label-text">Git me
+                    <div className="label-text">
                         <i className="fa fa-search"></i>
+                        Git me
                     </div>
                 </label>
                 <SearchSuggestions

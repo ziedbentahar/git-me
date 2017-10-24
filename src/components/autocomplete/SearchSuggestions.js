@@ -25,7 +25,7 @@ const SuggestionSection = ({sectionName, items, onMoreClick}) => {
 
 export const SearchSuggestions = ({suggestions, onMoreClick}) => {
 
-    const suggestionItems = [...suggestions].map(([key, value]) => 
+    const suggestionItems =  suggestions && [...suggestions].map(([key, value]) => 
         <SuggestionSection 
             key={key}
             sectionName={key} 
@@ -33,8 +33,9 @@ export const SearchSuggestions = ({suggestions, onMoreClick}) => {
             onMoreClick={onMoreClick} />); 
 
     return (
+        (suggestions &&
         <div className="search-suggestions">
             {suggestionItems}
-        </div>
+        </div>)
     );
 };
