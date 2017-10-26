@@ -24,7 +24,7 @@ export default class Autcomplete extends Component {
     searchByPrefix = (e) => {
         const value = e.target.value;
 
-        const suggestions = value.length > 2 ? this
+        const suggestions = value.length > 1 ? this
             .props
             .searchByPrefixFn(value) : 
             null;

@@ -1,39 +1,33 @@
 import lunr from 'lunr';
 import groupBy from '../helpers/groupBy';
 
+class SearchService {
 
-export default class SearchService {
-
-    createIndex = (documents) => {
-
-        this.documentsWithId = {};
-        const self = this;
-        this.index = lunr(function () {
-            const indexer = this; 
-            indexer.ref('id');
-            indexer.field('category');
-            indexer.field('command');
-            indexer.field('description');
-
-            documents.forEach((item, index) => {
-                const documentWithId = {id: index, ...item}
-                self.documentsWithId[index] = documentWithId;
-                indexer.add(documentWithId)
-             });
-        });
+    initialize(documents, index) {
+        this.index = lunr.Index.load(index);
+        this.documents = documents;
     }
 
     searchByPrefix = (queryTerm) => {
 
-        if(!this.index || !queryTerm) {
+        if(!this.index|| !this.documents) {
+            throw  new Error(
+                `Search service was not properly initialized. 
+                initialize() was not invoked properly.
+            `);
+        }
+
+        if(!queryTerm) {
             return;
         }
 
         const result = this.index.search(`${queryTerm}^100 ${queryTerm}*^10`);
         
         if (result && result.length > 0) {
-            return groupBy(result.map(item => this.documentsWithId[item.ref]), 'category');
+            return groupBy(result.map(item => this.documents[item.ref]), 'category');
         } 
 
     }
 }
+
+export default new SearchService();

@@ -1,0 +1,20 @@
+.notification {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left:0;
+    right: 0;
+    top:0;
+    margin: auto;
+    transition: all 0.3s;
+    background-color: #1f1c1c;
+    border: solid 1px;
+}
+
+.notification h4 {
+    font-size: 16px;
+}
+
+.notification p {
+    font-size: 14px;
+}
