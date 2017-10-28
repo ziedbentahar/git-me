@@ -13,7 +13,7 @@
   },
   "scripts": {
     "cleanIndex": "rimraf public/documents.json public/documents-idx.json",
-    "createIndex": "node build/build-index resources/git-cheat-sheet.json public documents",
+    "createIndex": "node scripts/build-index resources/git-cheat-sheet.json public documents",
     "resetIndex" : "npm run cleanIndex && npm run createIndex", 
     "start": "npm run resetIndex && react-scripts start",
     "build": "npm run resetIndex && react-scripts build",
