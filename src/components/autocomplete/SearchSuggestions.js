@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './SearchSuggestions.css';
 
 
@@ -14,6 +15,11 @@ const SuggestionSectionList = ({items, onMoreClick}) => {
     );
 }
 
+SuggestionSectionList.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object),
+    onMoreClick: PropTypes.func
+}
+
 const SuggestionSection = ({sectionName, items, onMoreClick}) => {
     return (
         <section>
@@ -21,6 +27,12 @@ const SuggestionSection = ({sectionName, items, onMoreClick}) => {
             <SuggestionSectionList items={items} onMoreClick={onMoreClick} />
         </section>
     );
+}
+
+SuggestionSection.propTypes = {
+    sectionName: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.object),
+    onMoreClick: PropTypes.func
 }
 
 export const SearchSuggestions = ({suggestions, onMoreClick}) => {
@@ -39,3 +51,8 @@ export const SearchSuggestions = ({suggestions, onMoreClick}) => {
         </div>)
     );
 };
+
+SearchSuggestions.propTypes = {
+    suggestions: PropTypes.arrayOf(PropTypes.object),
+    onMoreClick: PropTypes.func
+}

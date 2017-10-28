@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 import {SearchSuggestions} from './SearchSuggestions';
 import './Autocomplete.css';
 
 export default class Autcomplete extends Component {
+
+    static propTypes = {
+        searchByPrefixFn: PropTypes.func
+    }
 
     constructor() {
         super();
