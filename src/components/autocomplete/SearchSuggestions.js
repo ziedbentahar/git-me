@@ -53,6 +53,6 @@ export const SearchSuggestions = ({suggestions, onMoreClick}) => {
 };
 
 SearchSuggestions.propTypes = {
-    suggestions: PropTypes.arrayOf(PropTypes.object),
+    suggestions: PropTypes.object,
     onMoreClick: PropTypes.func
 }
