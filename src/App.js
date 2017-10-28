@@ -22,11 +22,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Autocomplete searchByPrefixFn={SearchService.searchByPrefix}/>
-        <Notification notificationManager={NotificationManager}/>
+      <div className="app">
+        <Autocomplete className="autcomplete-box" searchByPrefixFn={SearchService.searchByPrefix}/>
+        {/*<Notification notificationManager={NotificationManager}/>
         <button
-          onClick={(e) => NotificationManager.notify({text: 'hello world', title: 'my title', duration: 2000, delayed: true})}>click me</button>
+    onClick={(e) => NotificationManager.notify({text: 'hello world', title: 'my title', duration: 2000, delayed: true})}>click me</button>*/}
       </div>
 
     );

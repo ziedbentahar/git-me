@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 body {
     background-color: #333333;
     font-family: 'Montserrat', sans-serif;
 }
+

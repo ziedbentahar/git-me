@@ -46,8 +46,11 @@ export default class Autcomplete extends Component {
                         <i className="fa fa-search"></i>
                         Git me
                     </div>
+                    <div className="placeholder">Looking for some git help?</div>
                 </label>
+                
                 <SearchSuggestions
+                    className="search-suggestions"
                     suggestions={this.state.suggestions}
                     onMoreClick={this.handleRequestMoreResults}/>
             </div>

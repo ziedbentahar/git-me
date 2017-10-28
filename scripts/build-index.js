@@ -25,6 +25,7 @@ var idx = lunr(function () {
     this.field('category');
     this.field('command');
     this.field('description');
+    this.field('keywords');
 
     documents.forEach((item, index) => {
         item.id = index;

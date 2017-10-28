@@ -2,14 +2,14 @@
     transition: all 0.3s;
 }
 
-label {
+.search label {
     display: block;
     letter-spacing: 4px;
     padding-top: 30px;
     text-align: center;
 }
 
-label .label-text {
+.search label .label-text {
     color: #9B9B9B;
     cursor: text;
     font-size: 20px;
@@ -19,7 +19,7 @@ label .label-text {
     transition: all 0.3s;
 }
 
-label input {
+.search label input {
     background-color: transparent;
     border: 0;
     border-bottom: 2px solid #4A4A4A;
@@ -33,17 +33,41 @@ label input {
     width: 300px;
 }
 
-label input:focus {
+.search label input:focus {
     width: 400px;
 }
 
-label input:focus+.label-text {
+.search label input:focus ~ .label-text {
     color: #F0F0F0;
     font-size: 13px;
     transform: translateY(-74px);
 }
 
-label input:valid+.label-text {
+.search label input:valid ~ .label-text {
     font-size: 13px;
     transform: translateY(-74px);
+}
+
+.search .placeholder {
+    color: #F0F0F0;
+    font-size: 12px;
+    transition: all 0.3s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.search label input:focus ~ .placeholder {
+    opacity: 1;
+    transform: translateY(0px);
+    letter-spacing: 2px;
+}
+
+.search label input:valid ~ .placeholder {
+    opacity: 0;
+    transform: translateY(-10px);
+    letter-spacing: 2px;
+}
+
+.search .search-suggestions {
+    padding-top: 10px;
 }
