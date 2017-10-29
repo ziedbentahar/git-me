@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Sidebar from 'react-sidebar';
-import Autocomplete from './components/autocomplete/Autocomplete';
-import SidebarContent from './components/sidebarContent/SidebarContent';
-import RoundButtonWithArrow from './components/roundButton/RoundButton';
-import SearchService from './services/SearchService';
+import Autocomplete from './components/Autocomplete';
+import {SidebarContent} from './components/Sidebar';
+import {RoundButtonWithArrow} from './components/Buttons';
+import SearchService from 'services/SearchService';
 import {DOCUMENTS_FILE_NAME, INDEX_FILE_NAME} from './resourceNames';
 
 import 'font-awesome/css/font-awesome.min.css';
@@ -40,11 +40,13 @@ class App extends Component {
 
   handleKeyDown = () => {
 
-    if(this.state.sidebarOpen) {
+    if (this.state.sidebarOpen) {
       this.onSetSidebarOpen(false);
     }
 
-    this.autocomplete.focus();
+    this
+      .autocomplete
+      .focus();
   }
 
   render() {
@@ -62,16 +64,19 @@ class App extends Component {
             ref
             ={(autocomplete) => this.autocomplete = autocomplete}
             searchByPrefixFn={SearchService.searchByPrefix}/>
-        </div>
-          <RoundButtonWithArrow
-            style={{
+          <div className="menu">
+            <RoundButtonWithArrow
+              style={{
               position: 'absolute',
               right: 10,
               top: 20
             }}
-            withBorder={false}
-            arrowDirection="left"
-            onClick={() => this.onSetSidebarOpen(true)}/>
+              withBorder={false}
+              arrowDirection="left"
+              onClick={() => this.onSetSidebarOpen(true)}/>
+          </div>
+
+        </div>
       </Sidebar>
 
     );

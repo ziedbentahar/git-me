@@ -1,5 +1,5 @@
 import lunr from 'lunr';
-import groupBy from '../helpers/groupBy';
+import groupBy from 'helpers/groupBy';
 
 class SearchService {
 

@@ -16,9 +16,12 @@
     "cleanIndex": "rimraf public/documents.json public/documents-idx.json",
     "createIndex": "node scripts/build-index resources/git-cheat-sheet.json public documents",
     "resetIndex": "npm run cleanIndex && npm run createIndex",
-    "start": "npm run resetIndex && react-scripts start",
+    "start": "npm run resetIndex && cross-env NODE_PATH=src react-scripts start react-scripts start",
     "build": "npm run resetIndex && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "cross-env NODE_PATH=src react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.1"
   }
 }
