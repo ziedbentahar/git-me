@@ -1,11 +1,14 @@
 .sidebarContent {
     height: 100%;
     width: 400px;
-    background-color: #222222;
+    background-color: #333333;
 }
 
 .sidebarContent header {
-    padding-top: 10px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #9B9B9B;
 }
 
 .sidebarContent header .logo {
@@ -22,7 +25,7 @@
     bottom: 0;
     margin-bottom: 10px;
     width: 100%;
-    color:#9B9B9B;
+    color: #9B9B9B;
     font-family: 'Inconsolata', sans-serif;
 }
 
@@ -32,12 +35,19 @@
     animation: 1s blink step-end infinite;
 }
 
+.sidebarContent article {
+    color: #9B9B9B;
+    font-size: 14px;
+    padding: 50px;
+    line-height: 30px;
+}
+
 @keyframes "blink" {
-    from, to {
-      color: transparent;
+    from,
+    to {
+        color: transparent;
     }
     50% {
-      color: #9B9B9B;
+        color: #9B9B9B;
     }
-  }
-  
+}

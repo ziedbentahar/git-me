@@ -63,18 +63,15 @@ class App extends Component {
             ={(autocomplete) => this.autocomplete = autocomplete}
             searchByPrefixFn={SearchService.searchByPrefix}/>
         </div>
-        <div
-          style={{
-          position: 'absolute',
-          right: 10,
-          top: 20
-        }}>
           <RoundButtonWithArrow
+            style={{
+              position: 'absolute',
+              right: 10,
+              top: 20
+            }}
             withBorder={false}
             arrowDirection="left"
             onClick={() => this.onSetSidebarOpen(true)}/>
-        </div>
-
       </Sidebar>
 
     );

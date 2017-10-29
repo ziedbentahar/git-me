@@ -2,20 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './RoundButton.css';
 
-const RoundButtonWithArrow = ({arrowDirection, withBorder, onClick}) => {
+const RoundButtonWithArrow = ({style, arrowDirection, withBorder, onClick}) => {
 
-    const borderStyle = {
-        borderWidth: withBorder ? 1 : 0
+    const inlineStyle = {
+        borderWidth: withBorder ? 1 : 0,
+        ...style
     };
 
     return (
-        <div onClick={() => onClick()} className="roundButton" style={borderStyle}>
+        <div onClick={() => onClick()} className="roundButton" style={inlineStyle}>
             <i className={`fa fa-angle-${arrowDirection}`}></i>
         </div>
     );
 };
 
 RoundButtonWithArrow.propTypes = {
+    style: PropTypes.object,
     onClick: PropTypes.func.isRequired,
     withBorder: PropTypes.bool.isRequired,
     arrowDirection: PropTypes.string.isRequired
