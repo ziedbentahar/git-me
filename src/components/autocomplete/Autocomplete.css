@@ -19,6 +19,10 @@
     transition: all 0.3s;
 }
 
+.search label .label-text i {
+    padding-right: 10px;
+}
+
 .search label input {
     background-color: transparent;
     border: 0;

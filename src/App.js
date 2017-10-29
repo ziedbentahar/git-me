@@ -67,7 +67,7 @@ class App extends Component {
           <div className="menu">
             <RoundButtonWithArrow
               style={{
-              position: 'absolute',
+              position: 'fixed',
               right: 10,
               top: 20
             }}

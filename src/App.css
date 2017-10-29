@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
-
 body {
     background-color: #333333;
     font-family: 'Montserrat', sans-serif;
 }
-
-.sideMenuOpenButton {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-   
-}
-
