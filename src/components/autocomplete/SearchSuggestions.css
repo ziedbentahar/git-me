@@ -29,21 +29,19 @@
     padding-bottom:10px;
     font-weight: 300;
     cursor: pointer; cursor: hand;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 .search-suggestions section ul li .description {
     margin: 5px;
     font-size: 26px;
     padding-bottom:5px;
-    cursor: pointer; cursor: hand;
 }
 
 .search-suggestions section ul li .details {
     margin: 5px;
     font-size: 20px;
     padding-bottom:5px;
-    cursor: pointer; cursor: hand;
     font-family: 'Inconsolata', sans-serif;
 }
 

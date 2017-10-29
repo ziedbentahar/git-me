@@ -6,3 +6,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.sideMenuOpenButton {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+   
+}
+

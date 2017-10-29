@@ -7,7 +7,7 @@ const SuggestionSectionList = ({items, onMoreClick}) => {
 
     const listItems = items.map((item) =><li key={item.id}>
         <p className="description">{item.description}</p>
-        <p className="details">$ {item.command}</p>
+        {item.command  && <p className="details">$ {item.command}</p>}
     </li>);
 
     return (
@@ -16,7 +16,7 @@ const SuggestionSectionList = ({items, onMoreClick}) => {
 }
 
 SuggestionSectionList.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.object),
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
     onMoreClick: PropTypes.func
 }
 
@@ -31,7 +31,7 @@ const SuggestionSection = ({sectionName, items, onMoreClick}) => {
 
 SuggestionSection.propTypes = {
     sectionName: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.object),
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
     onMoreClick: PropTypes.func
 }
 

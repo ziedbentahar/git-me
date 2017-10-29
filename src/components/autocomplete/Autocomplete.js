@@ -7,7 +7,7 @@ import './Autocomplete.css';
 export default class Autcomplete extends Component {
 
     static propTypes = {
-        searchByPrefixFn: PropTypes.func
+        searchByPrefixFn: PropTypes.func.isRequired
     }
 
     constructor() {
@@ -25,40 +25,39 @@ export default class Autcomplete extends Component {
         };
     }
 
+    focus = () => {
+        this.textInput.focus();
+    }
+
     handleRequestMoreResults = (e) => {}
 
     searchByPrefix = (e) => {
         const value = e.target.value;
 
-        const suggestions = value.length > 1 ? this
-            .props
-            .searchByPrefixFn(value) : 
-            null;
+        const suggestions = value.length > 1 ? 
+            this.props.searchByPrefixFn(value) : 
+            undefined;
       
-        if (suggestions) {
-            this.setState({suggestions: suggestions});
-        }  else {
-            this.setState({suggestions: null});
-        }
-
+        this.setState({suggestions: suggestions});
+      
     }
 
     render() {
         return (
             <div className="search">
                 <label>
-                    <input type="text" required onKeyUp={this.searchByPrefix}/>
+                    <input ref={(input) => this.textInput = input} type="text" required onKeyUp={this.searchByPrefix}/>
                     <div className="label-text">
                         <i className="fa fa-search"></i>
-                        Git me
+                        Git cheat sheet
                     </div>
                     <div className="placeholder">Looking for some git help?</div>
                 </label>
                 
-                <SearchSuggestions
+               {this.state.suggestions && <SearchSuggestions
                     className="search-suggestions"
                     suggestions={this.state.suggestions}
-                    onMoreClick={this.handleRequestMoreResults}/>
+                    onMoreClick={this.handleRequestMoreResults}/>}
             </div>
         );
     }

@@ -52,7 +52,7 @@
     color: #F0F0F0;
     font-size: 12px;
     transition: all 0.3s;
-    transform: translateY(-50px);
+    transform: translateY(-10px);
     opacity: 0;
 }
 
@@ -64,7 +64,7 @@
 
 .search label input:valid ~ .placeholder {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(0px);
     letter-spacing: 2px;
 }
 

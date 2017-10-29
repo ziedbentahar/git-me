@@ -1,0 +1,43 @@
+.sidebarContent {
+    height: 100%;
+    width: 400px;
+    background-color: #222222;
+}
+
+.sidebarContent header {
+    padding-top: 10px;
+}
+
+.sidebarContent header .logo {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.sidebarContent footer {
+    text-align: center;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    color:#9B9B9B;
+    font-family: 'Inconsolata', sans-serif;
+}
+
+.sidebarContent footer .blinking-cursor {
+    font-weight: 100;
+    font-size: 12px;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: #9B9B9B;
+    }
+  }
+  

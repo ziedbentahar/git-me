@@ -9,12 +9,13 @@
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-scripts": "1.0.14",
+    "react-sidebar": "^2.3.2",
     "rimraf": "^2.6.2"
   },
   "scripts": {
     "cleanIndex": "rimraf public/documents.json public/documents-idx.json",
     "createIndex": "node scripts/build-index resources/git-cheat-sheet.json public documents",
-    "resetIndex" : "npm run cleanIndex && npm run createIndex", 
+    "resetIndex": "npm run cleanIndex && npm run createIndex",
     "start": "npm run resetIndex && react-scripts start",
     "build": "npm run resetIndex && react-scripts build",
     "test": "react-scripts test --env=jsdom",
