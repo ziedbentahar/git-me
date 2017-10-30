@@ -68,8 +68,8 @@ class App extends Component {
             <RoundButtonWithArrow
               style={{
               position: 'fixed',
-              right: 10,
-              top: 20
+              right: 20,
+              top: 55
             }}
               withBorder={false}
               arrowDirection="left"

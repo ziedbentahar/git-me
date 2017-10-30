@@ -52,7 +52,11 @@
     transform: translateY(-74px);
 }
 
-.search .placeholder {
+.search label input:invalid {
+    box-shadow: none;
+}
+
+.search label .placeholder {
     color: #F0F0F0;
     font-size: 12px;
     transition: all 0.3s;
@@ -66,12 +70,8 @@
     letter-spacing: 2px;
 }
 
-.search label input:valid ~ .placeholder {
-    opacity: 0;
-    transform: translateY(0px);
-    letter-spacing: 2px;
-}
-
 .search .search-suggestions {
     padding-top: 10px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }

@@ -46,7 +46,10 @@ export default class Autcomplete extends Component {
         return (
             <div className="search">
                 <label>
-                    <input ref={(input) => this.textInput = input} type="text" required onKeyUp={this.searchByPrefix}/>
+                    <input ref={(input) => this.textInput = input} 
+                        autoComplete="off"
+                        autoCapitalize="off" spellCheck="false"
+                        type="text" required onKeyUp={this.searchByPrefix}/>
                     <div className="label-text">
                         <i className="fa fa-search"></i>
                         Git cheat sheet
