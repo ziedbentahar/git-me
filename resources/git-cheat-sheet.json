@@ -179,6 +179,12 @@
         "keywords": []
     },
     {
+        "category": "Cancel and redo stuffs",
+        "command": "git reset –hard HEAD",
+        "description": "Discards all local changes in the working directory.",
+        "keywords": []
+    },
+    {
         "category": "Synchronization and remote respositories",
         "command": "git push [alias] [branch]",
         "description": "Pushes all local changesets to the remote repository",
@@ -188,6 +194,18 @@
         "category": "Synchronization and remote respositories",
         "command": "git pull",
         "description": "Downloads new remote history and incorporate changes",
+        "keywords": []
+    },
+    {
+        "category": "Synchronization and remote respositories",
+        "command": "git remote -v",
+        "description": "Shows the name of remote repositories",
+        "keywords": []
+    },
+    {
+        "category": "Synchronization and remote respositories",
+        "command": "git fetch",
+        "description": "Get the latest changes from the origin but not merge.",
         "keywords": []
     }
 ]
