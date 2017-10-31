@@ -1,5 +1,6 @@
 .search {
     transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
 }
 
 .search label {
@@ -62,12 +63,20 @@
     transition: all 0.3s;
     transform: translateY(-10px);
     opacity: 0;
+    visibility: hidden;
 }
 
 .search label input:focus ~ .placeholder {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0px);
     letter-spacing: 2px;
+}
+
+.search label input:valid ~ .placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
 }
 
 .search .search-suggestions {
