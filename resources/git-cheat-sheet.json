@@ -84,7 +84,7 @@
     },
     {
         "category": "Branches",
-        "command": "git -b branch [branch-name]",
+        "command": "git branch -b [branch-name]",
         "description": "Creates a new branch with the specified name",
         "keywords": []
     },
@@ -92,6 +92,18 @@
         "category": "Branches",
         "command": "git merge [branch-name]",
         "description": "Merges the specified branch’s history into the current branch",
+        "keywords": []
+    },
+    {
+        "category": "Branches",
+        "command": "git checkout -b [branch-name]",
+        "description": "Creates a branch and switch to it.",
+        "keywords": []
+    },
+    {
+        "category": "Branches",
+        "command": "git checkout -m [new-branch-name]",
+        "description": "Rename branch",
         "keywords": []
     },
     {
@@ -206,6 +218,12 @@
         "category": "Synchronization and remote respositories",
         "command": "git fetch",
         "description": "Get the latest changes from the origin but not merge.",
+        "keywords": []
+    },
+    {
+        "category": "Synchronization and remote respositories",
+        "command": "git remote rm [remote repo name]",
+        "description": "Removes the remote repository.",
         "keywords": []
     }
 ]

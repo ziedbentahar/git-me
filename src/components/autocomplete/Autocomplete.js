@@ -29,35 +29,45 @@ export default class Autcomplete extends Component {
         this.textInput.focus();
     }
 
+    reset = () => {
+        this.textInput.value = '';
+    }
+
     handleRequestMoreResults = (e) => {}
 
     searchByPrefix = (e) => {
         const value = e.target.value;
 
-        const suggestions = value.length > 1 ? 
-            this.props.searchByPrefixFn(value) : 
-            undefined;
-      
+        const suggestions = value.length > 1
+            ? this
+                .props
+                .searchByPrefixFn(value)
+            : undefined;
+
         this.setState({suggestions: suggestions});
-      
     }
 
     render() {
         return (
             <div className="search">
                 <label>
-                    <input ref={(input) => this.textInput = input} 
+                    <input
+                        ref={(input) => this.textInput = input}
                         autoComplete="off"
-                        autoCapitalize="off" spellCheck="false"
-                        type="text" required onKeyUp={this.searchByPrefix}/>
+                        autoCapitalize="off"
+                        spellCheck="false"
+                        type="text"
+                        required
+                        onKeyUp={this.searchByPrefix}/>
+                        <i onClick={this.reset} className="cancel fa fa-times"></i>
                     <div className="label-text">
                         <i className="fa fa-search"></i>
                         Git cheat sheet
                     </div>
                     <div className="placeholder">Looking for some git help?</div>
                 </label>
-                
-               {this.state.suggestions &&  <SearchSuggestions
+
+                {this.state.suggestions && <SearchSuggestions
                     className="search-suggestions"
                     suggestions={this.state.suggestions}
                     onMoreClick={this.handleRequestMoreResults}/>}

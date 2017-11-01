@@ -1,6 +1,6 @@
 .sidebarContent {
     height: 100%;
-    width: 400px;
+    width: 350px;
     background-color: #333333;
 }
 
@@ -42,7 +42,7 @@
     line-height: 30px;
 }
 
-@keyframes "blink" {
+@keyframes blink {
     from,
     to {
         color: transparent;

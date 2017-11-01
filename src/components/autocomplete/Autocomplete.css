@@ -35,11 +35,11 @@
     padding: 5px 20px;
     text-align: center;
     transition: all 0.3s;
-    width: 300px;
+    width: 60%;
 }
 
 .search label input:focus {
-    width: 400px;
+    width: 80%;
 }
 
 .search label input:focus ~ .label-text {
@@ -83,4 +83,20 @@
     padding-top: 10px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+}
+
+.search .cancel {
+    transition: all 0.3s;
+    opacity: 0; 
+    visibility: hidden;
+    color:#9B9B9B;
+    border: 0;
+    border-bottom: 2px solid #4A4A4A;
+    padding-bottom: 11px;
+    cursor: pointer;
+}
+
+.search label input:valid ~ .cancel {
+    opacity: 1;
+    visibility: visible;
 }
