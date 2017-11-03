@@ -4,3 +4,13 @@ body {
     background-color: #333333;
     font-family: 'Montserrat', sans-serif;
 }
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}

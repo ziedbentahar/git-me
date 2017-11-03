@@ -20,11 +20,11 @@ SuggestionSectionList.propTypes = {
     onMoreClick: PropTypes.func
 }
 
-const SuggestionSection = ({sectionName, items, onMoreClick}) => {
+const SuggestionSection = ({sectionName, items}) => {
     return (
         <section>
             <h3>{sectionName}</h3>
-            <SuggestionSectionList items={items} onMoreClick={onMoreClick} />
+            <SuggestionSectionList items={items} />
         </section>
     );
 }
@@ -35,14 +35,13 @@ SuggestionSection.propTypes = {
     onMoreClick: PropTypes.func
 }
 
-export const SearchSuggestions = ({suggestions, onMoreClick}) => {
+export const SearchSuggestions = ({suggestions}) => {
 
-    const suggestionItems =  suggestions && [...suggestions].map(([key, value]) => 
+    const suggestionItems =  [...suggestions].map(([key, value]) => 
         <SuggestionSection 
             key={key}
             sectionName={key} 
-            items={value} 
-            onMoreClick={onMoreClick} />); 
+            items={value} />); 
 
     return (
         (suggestions &&

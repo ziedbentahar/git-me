@@ -225,5 +225,47 @@
         "command": "git remote rm [remote repo name]",
         "description": "Removes the remote repository.",
         "keywords": []
+    },
+    {
+        "category": "Tagging",
+        "command": "git tag",
+        "description": "Lists tags.",
+        "keywords": ["tag", "version", "release"]
+    },
+    {
+        "category": "Tagging",
+        "command": "git tag -l \"[pattern]\"",
+        "description": "Lists tags with specified pattern.",
+        "keywords": ["tag", "version", "release", "pattern"]
+    },
+    {
+        "category": "Tagging",
+        "command": "git tag -a [version] -m [message]",
+        "description": "Create annotated tag",
+        "keywords": ["tag", "version", "release", "annotate"]
+    },
+    {
+        "category": "Tagging",
+        "command": "git tag [version]",
+        "description": "Create a lightweight tag",
+        "keywords": ["tag", "version", "release", "lightweight"]
+    },
+    {
+        "category": "Tagging",
+        "command": "git tag -a [version] [commit]",
+        "description": "Tagging a commit",
+        "keywords": ["tag", "version", "release", "later"]
+    },
+    {
+        "category": "Tagging",
+        "command": "git push [alias] [version]",
+        "description": "Sharing a tag",
+        "keywords": ["tag", "version", "release", "later"]
+    },
+    {
+        "category": "Tagging",
+        "command": "git checkout [version]",
+        "description": "Checkout tags",
+        "keywords": ["tag", "version", "release"]
     }
 ]

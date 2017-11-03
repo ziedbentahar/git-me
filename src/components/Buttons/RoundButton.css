@@ -6,14 +6,5 @@
     height: 40px;
     border-radius: 50%;
     border: 1px solid #9B9B9B;
-    
-}
-.roundButton i {
-    padding-top: 5px;
-    padding-left:10px;
-    transition-duration: 0.3s;
-}
-
-.roundButton:hover i{
-    margin-left: 5px;
+    text-align: center;
 }

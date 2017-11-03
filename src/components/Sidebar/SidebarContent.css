@@ -1,6 +1,6 @@
 .sidebarContent {
     height: 100%;
-    width: 350px;
+    width: 300px;
     background-color: #333333;
 }
 
@@ -38,7 +38,7 @@
 .sidebarContent article {
     color: #9B9B9B;
     font-size: 14px;
-    padding: 50px;
+    padding: 20px;
     line-height: 30px;
 }
 

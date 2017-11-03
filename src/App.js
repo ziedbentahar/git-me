@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Sidebar from 'react-sidebar';
-import Autocomplete from './components/Autocomplete';
 import {SidebarContent} from './components/Sidebar';
-import {RoundButtonWithArrow} from './components/Buttons';
-import SearchService from 'services/SearchService';
-import {DOCUMENTS_FILE_NAME, INDEX_FILE_NAME} from './resourceNames';
+import GitCheatSheet from './screens/GitCheatSheet';
+import Home from './screens/Home';
 
 import 'font-awesome/css/font-awesome.min.css';
 import './App.css';
@@ -13,6 +11,7 @@ class App extends Component {
 
   constructor() {
     super();
+
     this.state = {
       sidebarOpen: false
     }
@@ -20,14 +19,7 @@ class App extends Component {
 
   async componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown.bind(this));
-
-    const [documents,
-      index] = await Promise.all([
-      (await fetch(DOCUMENTS_FILE_NAME)).json(),
-      (await fetch(INDEX_FILE_NAME)).json()
-    ]);
-
-    SearchService.initialize(documents, index);
+    
   }
 
   componentWillUnmount() {
@@ -44,9 +36,6 @@ class App extends Component {
       this.onSetSidebarOpen(false);
     }
 
-    this
-      .autocomplete
-      .focus();
   }
 
   render() {
@@ -60,22 +49,7 @@ class App extends Component {
         open={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen}>
         <div className="app">
-          <Autocomplete
-            ref
-            ={(autocomplete) => this.autocomplete = autocomplete}
-            searchByPrefixFn={SearchService.searchByPrefix}/>
-          <div className="menu">
-            <RoundButtonWithArrow
-              style={{
-              position: 'fixed',
-              right: 0,
-              top: 4
-            }}
-              withBorder={false}
-              arrowDirection="left"
-              onClick={() => this.onSetSidebarOpen(true)}/>
-          </div>
-
+          <Home />
         </div>
       </Sidebar>
 

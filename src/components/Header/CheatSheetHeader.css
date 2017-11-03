@@ -1,0 +1,34 @@
+.cheat-sheet-nav {
+    display: flex;
+}
+
+.cheat-sheet-nav .left {
+    padding-top: 47px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    transition-duration: 0.3s;
+}
+
+.cheat-sheet-nav .left:hover {
+    padding-left:10px;
+}
+
+.cheat-sheet-nav .right {
+    padding-top: 47px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    transition-duration: 0.3s;
+}
+
+.cheat-sheet-nav .right:hover {
+    padding-right:10px;
+}
+
+.cheat-sheet-nav .center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-basis: 80%;
+}
