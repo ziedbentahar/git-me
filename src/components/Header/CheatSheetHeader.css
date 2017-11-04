@@ -2,28 +2,18 @@
     display: flex;
 }
 
-.cheat-sheet-nav .left {
+.cheat-sheet-nav .button {
     padding-top: 47px;
     flex: 1;
     display: flex;
+}
+
+.cheat-sheet-nav .button .left {
     justify-content: flex-start;
-    transition-duration: 0.3s;
 }
 
-.cheat-sheet-nav .left:hover {
-    padding-left:10px;
-}
-
-.cheat-sheet-nav .right {
-    padding-top: 47px;
-    flex: 1;
-    display: flex;
+.cheat-sheet-nav .button .right {
     justify-content: flex-end;
-    transition-duration: 0.3s;
-}
-
-.cheat-sheet-nav .right:hover {
-    padding-right:10px;
 }
 
 .cheat-sheet-nav .center {

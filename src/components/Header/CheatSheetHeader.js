@@ -7,7 +7,7 @@ const CheatSheetHeader = ({hasBackButton, hasSidebarButton, renderHeaderContent,
 
     return (
         <div className="cheat-sheet-nav">
-                <div className="left">
+                <div className="button left">
                     {hasBackButton && <RoundButton
                         withBorder={false}
                         icon="fa-arrow-left"
@@ -16,7 +16,7 @@ const CheatSheetHeader = ({hasBackButton, hasSidebarButton, renderHeaderContent,
                 <div className="center">
                     {renderHeaderContent && renderHeaderContent()}
                 </div>
-                <div className="right">
+                <div className="button right">
                     {hasSidebarButton && <RoundButton
                         withBorder={false}
                         icon="fa-bars"

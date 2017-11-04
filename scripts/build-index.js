@@ -41,9 +41,8 @@ fs.writeFile(path.join(destinationDir, documentsFileName + '.json'), JSON.string
     console.log('Documents were saved!');
 });
 
-fs.writeFile(path.join(destinationDir, documentsFileName + '-idx.json'), JSON.stringify(idx), function (err) {
+fs.writeFile(path.join(destinationDir, documentsFileName + '-index.json'), JSON.stringify(idx), function (err) {
     if (err) 
         throw err;
     console.log('Index was saved!');
 });
-
