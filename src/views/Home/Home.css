@@ -10,7 +10,13 @@
 
 .home section {
     padding: 50px 10px;
-    width: 90%;
+    width: 60%;
     margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .home section {
+        width: 90%;
+    }
 }
 

@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import Sidebar from 'react-sidebar';
 import {BrowserRouter as Router} from 'react-router-dom';
-import SlideInRoute from './components/AnimatedRoute/SlideInRoute';
-import {SidebarContent} from './components/Sidebar';
-import Home from './screens/Home';
-import routes from './routes';
+import SlideInRoute from 'components/AnimatedRoute/SlideInRoute';
+import {SidebarContent} from 'components/Sidebar';
+import Home from 'views/Home';
+import routes from 'config/routesConfig';
 
 import 'font-awesome/css/font-awesome.min.css';
+import 'ionicons/dist/css/ionicons.min.css'
 import './App.css';
 
 class App extends Component {
@@ -41,7 +42,7 @@ class App extends Component {
               path="/" component={Home}/>
             <SlideInRoute
               exact
-              path={routes.cheatSheets.path + routes.cheatSheets.git.path}
+              path={routes.cheatSheets.git.path}
               component={routes.cheatSheets.git.component}
               sidebarClickHandler={this.onSetSidebarOpen}/>
           </div>

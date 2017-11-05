@@ -1,7 +1,7 @@
 const CHEAT_SHEET_DOCUMENTS_FILE_SUFFIX = '-cheat-sheet.json';
 const CHEAT_SHEET_INDEX_FILE_SUFFIX = '-cheat-sheet-index.json';
 
-const cheatSheetsConfig = {
+const cheatSheetsData = {
     git: {
         name: 'git cheat sheet',
         data: {
@@ -18,4 +18,4 @@ const cheatSheetsConfig = {
     }
 }
 
-export default cheatSheetsConfig;
+export default cheatSheetsData;

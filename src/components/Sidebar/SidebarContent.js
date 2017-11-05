@@ -14,7 +14,6 @@ export default class SidebarContent extends Component {
                 <article>
                     Whether you are new to git or just needing a referesher,
                     this cheat sheet will help you discover or remember useful git commands.
-                    
                 </article>
                 <footer>
                     Crafted with <i className="fa fa-heart"></i> by InFlow-IT

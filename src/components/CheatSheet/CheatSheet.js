@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types'
-import CheatSheetHeader from 'components/Header/CheatSheetHeader';
+import CheatSheetHeader from './CheatSheetHeader';
 import AnimatedSearchInput from 'components/SearchInput/AnimatedSearchInput';
 import {SearchSuggestions} from 'components/Autocomplete/SearchSuggestions';
 
@@ -40,7 +40,7 @@ export default class CheatSheetContainer extends Component {
                     renderHeaderContent={() =>  
                         <AnimatedSearchInput
                             onSearchQueryChange={(query) => this.searchByPrefix(query)}
-                            placeholder="Need a quick git refresher ?"
+                            placeholder="Just type in any git related stuff"
                             label="Git cheat sheet" />}
                 />
                 {suggestions && <SearchSuggestions suggestions={suggestions} />}

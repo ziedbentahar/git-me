@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheatSheetContainer from './CheatSheetContainer';
+import CheatSheetContainer from './CheatSheet';
 import SearchServiceFactory from 'services/Search/SearchServiceFactory';
 
 const createCheatSheet = (cheatSheetConfiguration, 
@@ -24,7 +24,6 @@ const createCheatSheet = (cheatSheetConfiguration,
                 name={cheatSheetConfiguration.name}/>);
         }
     }
-
 };
 
 createCheatSheet.propTypes = {

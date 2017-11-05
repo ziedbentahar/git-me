@@ -31,11 +31,11 @@ const SquareGrid = ({data}) => {
             title: 'mongoDB',
             logo: 'https://webassets.mongodb.com/_com_assets/cms/mongodb-logo-rgb-j6w271g1xn.jpg',
             route: '/cheat-sheet/git'
-        }, {
+        }, /*{
             title: 'rxjs',
             logo: 'https://avatars1.githubusercontent.com/u/984368?s=400&v=4',
             route: '/cheat-sheet/git'
-        }
+        }*/
     ];
 
     const grid = asGrid(elements, NB_ELEMENTS_PER_ROW);
