@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
 import Sidebar from 'react-sidebar';
-import {BrowserRouter as Router} from 'react-router-dom';
-import SlideInRoute from 'components/AnimatedRoute/SlideInRoute';
 import {SidebarContent} from 'components/Sidebar';
-import Home from 'views/Home';
-import routes from 'config/routesConfig';
-
+import CheatSheetView from 'views/CheatSheetView';
 import 'font-awesome/css/font-awesome.min.css';
-import 'ionicons/dist/css/ionicons.min.css'
+
 import './App.css';
+
 
 class App extends Component {
 
@@ -20,33 +17,20 @@ class App extends Component {
     }
   }
 
-  onSetSidebarOpen = (open) => {
+  toggleSideBarState = (open) => {
     this.setState({sidebarOpen: open});
   }
 
   render() {
-
     const sidebarContent = <SidebarContent/>
-
     return (
       <Sidebar
         ref={(sidebar) => this.sidebar = sidebar}
         pullRight
         sidebar={sidebarContent}
         open={this.state.sidebarOpen}
-        onSetOpen={this.onSetSidebarOpen}>
-        <Router>
-          <div>
-            <SlideInRoute 
-              exact 
-              path="/" component={Home}/>
-            <SlideInRoute
-              exact
-              path={routes.cheatSheets.git.path}
-              component={routes.cheatSheets.git.component}
-              sidebarClickHandler={this.onSetSidebarOpen}/>
-          </div>
-        </Router>
+        onSetOpen={this.toggleSideBarState}>
+          <CheatSheetView sidebarClickHandler={this.toggleSideBarState} />
       </Sidebar>
     );
   }

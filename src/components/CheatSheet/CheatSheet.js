@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import CheatSheetHeader from './CheatSheetHeader';
-import AnimatedSearchInput from 'components/SearchInput/AnimatedSearchInput';
-import {SearchSuggestions} from 'components/Autocomplete/SearchSuggestions';
+import AnimatedSearchInput from 'components/AnimatedSearchInput';
+import SearchSuggestions from 'components/SearchSuggestions';
 
-export default class CheatSheetContainer extends Component {
+export default class CheatSheet extends Component {
 
     static propTypes = {
         searchByPrefixFn : PropTypes.func.isRequired,
         sidebarClickHandler: PropTypes.func.isRequired,
-        backClickHandler: PropTypes.func.isRequired,
         name: PropTypes.string.isRequired
     };
 
@@ -33,9 +32,7 @@ export default class CheatSheetContainer extends Component {
         return (
             <div>
                 <CheatSheetHeader
-                    hasBackButton
                     hasSidebarButton
-                    onBackClick={() => this.props.backClickHandler()}
                     onSidebarClick={() => this.props.sidebarClickHandler(true)}
                     renderHeaderContent={() =>  
                         <AnimatedSearchInput

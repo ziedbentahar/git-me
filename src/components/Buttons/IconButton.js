@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './RoundButton.css';
+import './IconButton.css';
 
-const RoundButton = ({style, icon, withBorder, onClick}) => {
+const IconButton = ({style, icon, withBorder, onClick}) => {
 
     const inlineStyle = {
         borderWidth: withBorder ? 1 : 0,
@@ -16,11 +16,11 @@ const RoundButton = ({style, icon, withBorder, onClick}) => {
     );
 };
 
-RoundButton.propTypes = {
+IconButton.propTypes = {
     style: PropTypes.object,
     onClick: PropTypes.func.isRequired,
     withBorder: PropTypes.bool.isRequired,
     icon: PropTypes.string.isRequired
 }
 
-export default RoundButton;
+export default IconButton;

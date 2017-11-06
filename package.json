@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "ionicons": "^3.0.0",
     "lunr": "^2.1.4",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",

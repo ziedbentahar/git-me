@@ -1,2 +1,2 @@
-import createCheatSheet from './createCheatSheet';
-export  {createCheatSheet};
+import CheatSheet from './CheatSheet';
+export default CheatSheet;

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SearchSuggestions.css';
 
-
 const SuggestionSectionList = ({items, onMoreClick}) => {
 
     const listItems = items.map((item) =><li key={item.id}>
@@ -35,7 +34,7 @@ SuggestionSection.propTypes = {
     onMoreClick: PropTypes.func
 }
 
-export const SearchSuggestions = ({suggestions}) => {
+const SearchSuggestions = ({suggestions}) => {
 
     const suggestionItems =  [...suggestions].map(([key, value]) => 
         <SuggestionSection 
@@ -55,3 +54,5 @@ SearchSuggestions.propTypes = {
     suggestions: PropTypes.object,
     onMoreClick: PropTypes.func
 }
+
+export default SearchSuggestions;
