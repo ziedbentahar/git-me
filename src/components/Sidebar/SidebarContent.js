@@ -1,25 +1,34 @@
-import React, {Component} from 'react'
-import './SidebarContent.css';
-import logo from './logo.png';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export default class SidebarContent extends Component {
-   
-    render() {
-        return (
-            <div className="sidebarContent">
-                <header>
-                    <img className="logo" src={logo} alt="Logo"/>
-                    <p>Git cheat sheet</p>
-                </header>
-                <article>
-                    Whether you are new to git or just needing a referesher,
-                    this cheat sheet will help you discover or remember useful git commands.
-                </article>
-                <footer>
-                    Crafted with <i className="fa fa-heart"></i> by InFlow-IT
-                    <span className="blinking-cursor">|</span>
-                </footer>
-            </div>
-        )
-    }
+import './SidebarContent.css';
+//import logo from './logo.png';
+
+const SidebarContent = ({title, logo, mainContent}) => {
+    return (
+        <div className="sidebarContent">
+            <header>
+                <img className="logo" src={logo} alt="Logo"/>
+                <p>{title}</p>
+            </header>
+            <article>
+                {mainContent}
+            </article>
+            <footer>
+                Crafted with
+                <i className="fa fa-heart"></i>
+                by InFlow-IT
+                <span className="blinking-cursor">|</span>
+            </footer>
+        </div>
+    )
 }
+
+SidebarContent.propTypes = {
+    title: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    mainContent: PropTypes.string
+}
+
+export default SidebarContent;
+

@@ -9,7 +9,8 @@ export default class CheatSheet extends Component {
     static propTypes = {
         searchByPrefixFn : PropTypes.func.isRequired,
         sidebarClickHandler: PropTypes.func.isRequired,
-        name: PropTypes.string.isRequired
+        inputLabel: PropTypes.string.isRequired,
+        inputDescription: PropTypes.string.isRequired
     };
 
     constructor(props) {
@@ -37,8 +38,8 @@ export default class CheatSheet extends Component {
                     renderHeaderContent={() =>  
                         <AnimatedSearchInput
                             onSearchQueryChange={(query) => this.searchByPrefix(query)}
-                            placeholder="Just type in any git related stuff"
-                            label="Git cheat sheet" />}
+                            placeholder={this.props.inputDescription}
+                            label={this.props.inputLabel} />}
                 />
                 {suggestions && <SearchSuggestions suggestions={suggestions} />}
             </div>);

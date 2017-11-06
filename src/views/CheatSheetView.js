@@ -15,8 +15,13 @@ export default class CheatSheetView extends Component {
     }
 
     render() {
+
+        const {inputLabel, inputDescription} = cheatSheetConfig.search;
+        
         return <CheatSheet
             {...this.props}
+            inputLabel={inputLabel}
+            inputDescription={inputDescription}
             searchByPrefixFn={searchService.searchByPrefix}
             name={cheatSheetConfig.name}/>;
     }
