@@ -8,12 +8,14 @@
     display: flex;
 }
 
-.cheat-sheet-nav .button .left {
+.cheat-sheet-nav .left {
     justify-content: flex-start;
+    width: 10%;
 }
 
-.cheat-sheet-nav .button .right {
+.cheat-sheet-nav .right {
     justify-content: flex-end;
+    width: 10%;
 }
 
 .cheat-sheet-nav .center {

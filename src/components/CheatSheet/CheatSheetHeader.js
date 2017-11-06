@@ -7,15 +7,18 @@ const CheatSheetHeader = ({hasSidebarButton, renderHeaderContent, onSidebarClick
 
     return (
         <div className="cheat-sheet-nav">
-                <div className="center">
-                    {renderHeaderContent && renderHeaderContent()}
-                </div>
-                <div className="button right">
-                    {hasSidebarButton && <IconButton
-                        withBorder={false}
-                        icon="fa-angle-double-left"
-                        onClick={() => onSidebarClick()}/>}
-                </div>
+            <div className="left">
+                
+            </div>
+            <div className="center">
+                {renderHeaderContent && renderHeaderContent()}
+            </div>
+            <div className="button right">
+                {hasSidebarButton && <IconButton
+                    withBorder={false}
+                    icon="fa-angle-double-left"
+                    onClick={() => onSidebarClick()}/>}
+            </div>
         </div>
     );
 };
