@@ -1,2 +1,3 @@
-import SearchSuggestions from './SearchSuggestions';
-export default SearchSuggestions;
+import SearchSuggestionsList from './SearchSuggestionsList';
+import SearchSuggestionsGrid from './SearchSuggestionsGrid';
+export {SearchSuggestionsList, SearchSuggestionsGrid}

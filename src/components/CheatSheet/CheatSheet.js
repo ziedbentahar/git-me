@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import CheatSheetHeader from './CheatSheetHeader';
 import AnimatedSearchInput from 'components/AnimatedSearchInput';
-import SearchSuggestions from 'components/SearchSuggestions';
+import {SearchSuggestionsGrid} from 'components/SearchSuggestions';
 
 export default class CheatSheet extends Component {
 
@@ -41,7 +41,8 @@ export default class CheatSheet extends Component {
                             placeholder={this.props.inputDescription}
                             label={this.props.inputLabel} />}
                 />
-                {suggestions && <SearchSuggestions suggestions={suggestions} />}
+                {suggestions && <SearchSuggestionsGrid suggestions={suggestions} />}
+                {/*suggestions && <SearchSuggestions suggestions={suggestions} />*/}
             </div>);
     }
 }
