@@ -29,6 +29,11 @@
     font-family: 'Inconsolata', sans-serif;
 }
 
+.sidebarContent footer i {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
 .sidebarContent footer .blinking-cursor {
     font-weight: 100;
     font-size: 12px;
