@@ -26,13 +26,18 @@ class App extends Component {
 
     const {title, logoUrl, mainContent} = cheatSheetConfig.sidebar;
 
-    const sidebarContent = <SidebarContent 
-      title={title} 
-      logo={logoUrl} 
+    const sidebarContent = <SidebarContent
+      title={title}
+      logo={logoUrl}
       mainContent={mainContent}/>;
 
     return (
       <Sidebar
+        styles={{
+          content: {
+            overflowY: 'auto'
+          }
+        }}
         ref={(sidebar) => this.sidebar = sidebar}
         pullRight
         sidebar={sidebarContent}
