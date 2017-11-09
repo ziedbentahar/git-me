@@ -59,7 +59,7 @@
 
 .animated-search-input label .placeholder {
     color: #F0F0F0;
-    font-size: 12px;
+    font-size: 10px;
     transition: all 0.3s;
     transform: translateY(-10px);
     opacity: 0;
