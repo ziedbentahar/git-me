@@ -7,7 +7,8 @@ import {SearchSuggestionsGrid} from 'components/SearchSuggestions';
 export default class CheatSheet extends Component {
 
     static propTypes = {
-        searchByPrefixFn : PropTypes.func.isRequired,
+        searchByPrefixFn: PropTypes.func.isRequired,
+        getAllFn: PropTypes.func.isRequired,
         sidebarClickHandler: PropTypes.func.isRequired,
         inputLabel: PropTypes.string.isRequired,
         inputDescription: PropTypes.string.isRequired
@@ -20,12 +21,25 @@ export default class CheatSheet extends Component {
         };
     }
 
-    searchByPrefix = (query) => {
+    searchByPrefix = async(query) => {
+
         const suggestions = query.length > 1
-            ? this.props.searchByPrefixFn(query)
-            : undefined;
+            ? await this
+                .props
+                .searchByPrefixFn(query)
+            : await this
+                .props
+                .getAllFn();
 
         this.setState({suggestions: suggestions});
+    }
+
+    componentDidMount = async() => {
+        this.setState({
+            suggestions: await this
+                .props
+                .getAllFn()
+        });
     }
 
     render() {
@@ -35,14 +49,16 @@ export default class CheatSheet extends Component {
                 <CheatSheetHeader
                     hasSidebarButton
                     onSidebarClick={() => this.props.sidebarClickHandler(true)}
-                    renderHeaderContent={() =>  
-                        <AnimatedSearchInput
-                            onSearchQueryChange={(query) => this.searchByPrefix(query)}
-                            placeholder={this.props.inputDescription}
-                            label={this.props.inputLabel} />}
-                />
-                {suggestions && <SearchSuggestionsGrid suggestions={suggestions} />}
-                {/*suggestions && <SearchSuggestions suggestions={suggestions} />*/}
-            </div>);
+                    renderHeaderContent={() => <AnimatedSearchInput
+                    onSearchQueryChange={(query) => this.searchByPrefix(query)}
+                    placeholder={this.props.inputDescription}
+                    label={this.props.inputLabel}/>}/> 
+                    
+                {suggestions && <div style={{marginTop: 20}}>
+                    <SearchSuggestionsGrid suggestions={suggestions}/>
+                </div>}
+
+            </div>
+        );
     }
 }

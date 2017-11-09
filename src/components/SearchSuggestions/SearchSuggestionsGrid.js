@@ -7,7 +7,8 @@ import './SearchSuggestionsGrid.css';
 const SearchSuggestionsGrid = ({suggestions}) => {
     const suggestionItems = [...suggestions].map(([key, value]) => <SuggestionSection key={key} sectionName={key} items={value}/>);
 
-    return (suggestions && <Masonry
+    return (<Masonry
+        key={new Date()}
         className={'search-suggestions-grid'}
         elementType={'div'}
         options={{}}

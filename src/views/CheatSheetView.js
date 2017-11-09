@@ -10,10 +10,6 @@ const searchService = SearchServiceFactory
 
 export default class CheatSheetView extends Component {
 
-    async componentDidMount() {
-        await searchService.loadDocumentsAndData();
-    }
-
     render() {
 
         const {inputLabel, inputDescription} = cheatSheetConfig.search;
@@ -22,7 +18,8 @@ export default class CheatSheetView extends Component {
             {...this.props}
             inputLabel={inputLabel}
             inputDescription={inputDescription}
-            searchByPrefixFn={searchService.searchByPrefix}
+            searchByPrefixFn={searchService.searchByPrefixAsync}
+            getAllFn={searchService.getAllDocumentsAsync}
             name={cheatSheetConfig.name}/>;
     }
 }

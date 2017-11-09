@@ -11,6 +11,7 @@
     border: 1px solid #474747;
     margin: 2px;
     border-radius: 3px;
+    box-shadow: 1px;
 }
 
 .search-suggestions-grid section h3 {
@@ -27,45 +28,66 @@
 
 .search-suggestions-grid ul {
     list-style: none;
-    padding-left:5px;
-    margin-top:5px;
-    margin-bottom:5px;
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: 360px;
 }
 
 .search-suggestions-grid section ul li {
     font-size: 15px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     font-weight: 300;
-    cursor: pointer; cursor: hand;
+    cursor: pointer;
+    cursor: hand;
     transition: all 0.5s;
 }
 
 .search-suggestions-grid section ul li .description {
     margin: 5px;
     font-size: 15px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
 
 .search-suggestions-grid section ul li .details {
     margin: 5px;
     font-size: 12px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
     font-family: 'Inconsolata', sans-serif;
 }
 
 .search-suggestions-grid section ul li:hover {
-    padding-left:2px;
+    padding-left: 2px;
 }
 
-
-@media only screen and (max-width: 400px) {
-
+@media only screen and (max-width: 780px) {
     .search-suggestions-grid {
-        width: 99%;
+        width: 98%;
+    }
+
+    .search-suggestions-grid ul {
+        width: 320px;
+    }
+  
+    .search-suggestions-grid section ul li .description {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 412px) {
+
+    .search-suggestions-grid ul {
+        width: 98%;
     }
 
     .search-suggestions-grid section ul li .description {
         font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+
+    .search-suggestions-grid section ul li .description {
+        font-size: 14px;
     }
 }

@@ -4,11 +4,17 @@ import groupBy from 'helpers/groupBy';
 export default class SearchService {
 
     constructor({documentsFileName, indexFileName}) {
+
+        this.documentsLoaded = false;
         this.documentsFileName = documentsFileName;
         this.indexFileName = indexFileName;
     }
 
-    async loadDocumentsAndData() {
+    async ensureDocumentsAndIndexLoadedAsync() {
+
+        if(this.documentLoaded) {
+            return;
+        }
 
         const [documents,
             index] = await Promise.all([
@@ -16,21 +22,29 @@ export default class SearchService {
             (await fetch(this.indexFileName)).json()
         ]);
 
-        this.index = lunr.Index.load(index);
+        this.index = lunr
+            .Index
+            .load(index);
+
         this.documents = documents;
+        this.allDocumentsGroupedByCategory = groupBy(Object.values(this.documents), 'category');
+
+        this.documentsLoaded = true;
     }
 
-    searchByPrefix = (queryTerm) => {
+    getAllDocumentsAsync = async() => {
 
-        if (!this.index || !this.documents) {
-            throw new Error(`Search service was not properly initialized. 
-                initialize() was not invoked properly.
-            `);
-        }
+        await this.ensureDocumentsAndIndexLoadedAsync();
+        return this.allDocumentsGroupedByCategory;
+    }
+
+    searchByPrefixAsync = async(queryTerm) => {
 
         if (!queryTerm) {
             return;
         }
+
+        await this.ensureDocumentsAndIndexLoadedAsync();
 
         const result = this
             .index
