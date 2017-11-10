@@ -21,7 +21,7 @@
     "createIndex": "node scripts/build-index resources/git-cheat-sheet.json public git-cheat-sheet",
     "resetIndex": "npm run cleanIndex && npm run createIndex",
     "start": "npm run resetIndex && cross-env NODE_PATH=src react-scripts start react-scripts start",
-    "build": "npm run resetIndex && react-scripts build",
+    "build": "npm run resetIndex && cross-env NODE_PATH=src react-scripts build",
     "test": "cross-env NODE_PATH=src react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
