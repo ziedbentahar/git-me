@@ -3,7 +3,7 @@ const CHEAT_SHEET_INDEX_FILE_SUFFIX = '-cheat-sheet-index.json';
 
 const cheatSheetConfig = {
         sidebar: {
-            title: 'Git cheat sheet',
+            title: 'The awesome git cheat sheet',
             mainContent: `Whether you are new to git or just needing a referesher, 
             this cheat sheet will help you discover or remember useful git commands.`,
             logoUrl: `/logo.png`
