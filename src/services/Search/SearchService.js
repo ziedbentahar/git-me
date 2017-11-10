@@ -12,7 +12,7 @@ export default class SearchService {
 
     async ensureDocumentsAndIndexLoadedAsync() {
 
-        if(this.documentLoaded) {
+        if(this.documentsLoaded) {
             return;
         }
 
