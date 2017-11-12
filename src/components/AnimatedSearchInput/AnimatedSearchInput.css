@@ -100,3 +100,23 @@
     opacity: 1;
     visibility: visible;
 }
+
+@media only screen and (max-width: 412px) {
+    .animated-search-input label .label-text {
+        font-size: 9px;
+    }
+
+    .animated-search-input label input:focus~.label-text {
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .animated-search-input label .label-text {
+        font-size: 8px;
+    }
+
+    .animated-search-input label input:focus~.label-text {
+        font-size: 8px;
+    }
+}

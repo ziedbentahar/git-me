@@ -1,23 +1,35 @@
 [{
         "category": "Install GIT",
-        "description": "Install git for all platforms: http://git-scm.com",
-        "keywords": ["install", "windows", "macos", "linux"]
+        "description": "Install git on macOS with Homebrew",
+        "command": "brew install git",
+        "keywords": ["install", "macos", "homebrew"]
     },
     {
-        "category": "Configure Tooling",
+        "category": "Install GIT",
+        "description": "Install git on Debian-based linux",
+        "command": "sudo apt-get install git",
+        "keywords": ["install", "apt-get", "debian" , "linux"]
+    },
+    {
+        "category": "Install GIT",
+        "description": "Install git on Windows with Chocolatey",
+        "command": "choco install git",
+        "keywords": ["install", "windows", "choco"]
+    },
+    {
+        "category": "Configuration",
         "command": "git config --global user.name [name]",
         "description": "Sets the name you want attached to your commit transaction",
         "keywords": ["configuration", "name", "email", "user"]
-
     },
     {
-        "category": "Configure Tooling",
+        "category": "Configuration",
         "command": "git config --global user.email [email address]",
         "description": "Sets the email you want atached to your commit transactions",
         "keywords": ["configuration", "name", "email", "user"]
     },
     {
-        "category": "Configure Tooling",
+        "category": "Configuration",
         "command": "git config --global color.ui auto",
         "description": "Enables helpful colorization of command line output",
         "keywords": ["configuration", "color", "ui", "customization"]
@@ -49,7 +61,7 @@
     {
         "category": "Make Changes",
         "command": "git add [file]",
-        "description": "Snapshots the file in preparation for versioning",
+        "description": "Add the specified file to the staging area",
         "keywords": []
     },
     {
@@ -67,7 +79,7 @@
     {
         "category": "Make Changes",
         "command": "git commit -m [descriptive message]",
-        "description": "Records file snapshots permanently in version history",
+        "description": "Records staged snapshots in version history",
         "keywords": []
     },
     {
@@ -97,7 +109,7 @@
     {
         "category": "Branches",
         "command": "git checkout -b [branch-name]",
-        "description": "Creates a branch and switch to it.",
+        "description": "Creates a branch and switch to it",
         "keywords": []
     },
     {
@@ -193,49 +205,49 @@
     {
         "category": "Cancel and redo stuffs",
         "command": "git reset –hard HEAD",
-        "description": "Discards all local changes in the working directory.",
+        "description": "Discards all local changes in the working directory",
         "keywords": []
     },
     {
-        "category": "Synchronization and remote respositories",
+        "category": "Synchronization and remote repositories",
         "command": "git push [alias] [branch]",
         "description": "Pushes all local changesets to the remote repository",
         "keywords": []
     },
     {
-        "category": "Synchronization and remote respositories",
+        "category": "Synchronization and remote repositories",
         "command": "git pull",
         "description": "Downloads new remote history and incorporate changes",
         "keywords": []
     },
     {
-        "category": "Synchronization and remote respositories",
+        "category": "Synchronization and remote repositories",
         "command": "git remote -v",
         "description": "Shows the name of remote repositories",
         "keywords": []
     },
     {
-        "category": "Synchronization and remote respositories",
+        "category": "Synchronization and remote repositories",
         "command": "git fetch",
-        "description": "Get the latest changes from the origin but not merge.",
+        "description": "Get the latest changes from the origin but not merge",
         "keywords": []
     },
     {
-        "category": "Synchronization and remote respositories",
+        "category": "Synchronization and remote repositories",
         "command": "git remote rm [remote repo name]",
-        "description": "Removes the remote repository.",
+        "description": "Removes the remote repository",
         "keywords": []
     },
     {
         "category": "Tagging",
         "command": "git tag",
-        "description": "Lists tags.",
+        "description": "Lists tags",
         "keywords": ["tag", "version", "release"]
     },
     {
         "category": "Tagging",
         "command": "git tag -l \"[pattern]\"",
-        "description": "Lists tags with specified pattern.",
+        "description": "Lists tags with specified pattern",
         "keywords": ["tag", "version", "release", "pattern"]
     },
     {
@@ -267,5 +279,11 @@
         "command": "git checkout [version]",
         "description": "Checkout tags",
         "keywords": ["tag", "version", "release"]
+    },
+    {
+        "category": "Cancel and redo stuffs",
+        "command": "git commit --amend",
+        "description": "Change the commit message",
+        "keywords": ["undo", "message", "commit"]
     }
 ]
