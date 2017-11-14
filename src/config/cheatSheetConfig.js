@@ -9,7 +9,7 @@ const cheatSheetConfig = {
             logoUrl: `/logo.png`
         },
         search: {
-            inputLabel: 'Search this git cheat sheet',
+            inputLabel: 'The awesome git cheat sheet',
             inputDescription: 'Just type in any git related stuff'
         },
         data: {

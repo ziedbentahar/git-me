@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import CheatSheet from 'components/CheatSheet';
 import SearchServiceFactory from 'services/Search/SearchServiceFactory';
 import cheatSheetConfig from 'config/cheatSheetConfig';
@@ -10,17 +11,15 @@ const searchService = SearchServiceFactory
 
 export default class CheatSheetView extends Component {
 
-    render() {
+    static propTypes = {
+        searchInputLabel: PropTypes.string.isRequired
+    }
 
-        const {inputLabel, inputDescription} = cheatSheetConfig.search;
-        
+    render() {
         return <CheatSheet
             {...this.props}
-            inputLabel={inputLabel}
-            inputDescription={inputDescription}
+            inputLabel={this.props.searchInputLabel}
             searchByPrefixFn={searchService.searchByPrefixAsync}
-            getAllFn={searchService.getAllDocumentsAsync}
-            name={cheatSheetConfig.name}/>;
+            getAllFn={searchService.getAllDocumentsAsync}/>;
     }
 }
-

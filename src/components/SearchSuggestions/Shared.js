@@ -5,7 +5,7 @@ const SuggestionSectionList = ({items, onMoreClick}) => {
 
     const listItems = items.map((item) =><li key={item.id}>
         <p className="description">{item.description}</p>
-        {item.command  && <p className="details">$ {item.command}</p>}
+        {item.command  && <p className="details">{item.command}</p>}
     </li>);
 
     return (

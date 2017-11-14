@@ -10,8 +10,8 @@ export default class CheatSheet extends Component {
         searchByPrefixFn: PropTypes.func.isRequired,
         getAllFn: PropTypes.func.isRequired,
         sidebarClickHandler: PropTypes.func.isRequired,
-        inputLabel: PropTypes.string.isRequired,
-        inputDescription: PropTypes.string.isRequired
+        searchInputLabel: PropTypes.string.isRequired,
+        inputDescription: PropTypes.string
     };
 
     constructor(props) {
@@ -44,6 +44,7 @@ export default class CheatSheet extends Component {
 
     render() {
         const {suggestions} = this.state;
+        
         return (
             <div>
                 <CheatSheetHeader
@@ -52,7 +53,7 @@ export default class CheatSheet extends Component {
                     renderHeaderContent={() => <AnimatedSearchInput
                     onSearchQueryChange={(query) => this.searchByPrefix(query)}
                     placeholder={this.props.inputDescription}
-                    label={this.props.inputLabel}/>}/> 
+                    label={this.props.searchInputLabel}/>}/> 
                     
                 {suggestions && <div style={{marginTop: 20}}>
                     <SearchSuggestionsGrid suggestions={suggestions}/>

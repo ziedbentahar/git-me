@@ -65,6 +65,11 @@
     .search-suggestions-grid {
         width: 98%;
     }
+
+    .search-suggestions-grid section {
+        width: 360px;
+    }
+
     .search-suggestions-grid ul {
         width: 320px;
     }

@@ -25,6 +25,7 @@ class App extends Component {
   render() {
 
     const {title, logoUrl, mainContent} = cheatSheetConfig.sidebar;
+    const {inputLabel} = cheatSheetConfig.search;
 
     const sidebarContent = <SidebarContent
       title={title}
@@ -44,7 +45,8 @@ class App extends Component {
         open={this.state.sidebarOpen}
         onSetOpen={this.toggleSideBarState}>
           <CheatSheetView 
-            sidebarClickHandler={this.toggleSideBarState}/>
+            sidebarClickHandler={this.toggleSideBarState}
+            searchInputLabel={inputLabel}/>
       </Sidebar>
     );
   }

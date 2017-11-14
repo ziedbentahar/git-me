@@ -7,11 +7,9 @@ const CheatSheetHeader = ({hasSidebarButton, renderHeaderContent, onSidebarClick
 
     return (
         <div className="cheat-sheet-nav">
-            <div className="left">
-                
-            </div>
+           
             <div className="center">
-                {renderHeaderContent && renderHeaderContent()}
+            {renderHeaderContent && renderHeaderContent()}
             </div>
             <div className="button right">
                 {hasSidebarButton && <IconButton

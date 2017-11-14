@@ -35,11 +35,11 @@
     padding: 5px 20px;
     text-align: center;
     transition: all 0.3s;
-    width: 70%;
+    width: 100%;
 }
 
 .animated-search-input label input:focus {
-    width: 80%;
+    width: 110%;
 }
 
 .animated-search-input label input:focus~.label-text {
@@ -56,6 +56,7 @@
 .animated-search-input label input:invalid {
     box-shadow: none;
 }
+
 
 .animated-search-input label .placeholder {
     color: #F0F0F0;
