@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {SuggestionSection} from './Shared';
+import {SuggestionSection} from './SuggestionSection';
 import './SearchSuggestionsList.css';
 
 const SearchSuggestionsList = ({suggestions}) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Masonry from 'react-masonry-component';
-import {SuggestionSection} from './Shared';
+import {SuggestionSection} from './SuggestionSection';
 import './SearchSuggestionsGrid.css';
 
 const SearchSuggestionsGrid = ({suggestions}) => {
