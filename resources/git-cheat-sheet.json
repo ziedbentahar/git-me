@@ -91,19 +91,19 @@
     {
         "category": "Branches",
         "command": "$ git branch [branch-name]",
-        "description": "Switches to the specified branch",
-        "keywords": []
-    },
-    {
-        "category": "Branches",
-        "command": "$ git branch -b [branch-name]",
-        "description": "Creates a new branch with the specified name",
+        "description": "Creates a branch",
         "keywords": []
     },
     {
         "category": "Branches",
         "command": "$ git merge [branch-name]",
         "description": "Merges the specified branch’s history into the current branch",
+        "keywords": []
+    },
+    {
+        "category": "Branches",
+        "command": "$ git checkout [branch-name]",
+        "description": "Switches to the specified branch",
         "keywords": []
     },
     {
@@ -151,7 +151,7 @@
     {
         "category": "Stashing",
         "command": "$ git stash pop",
-        "description": "Restores the most last stashed files",
+        "description": "Restores the most last stashed files and deletes the stashed changeset",
         "keywords": []
     },
     {
